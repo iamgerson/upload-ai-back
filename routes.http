@@ -13,3 +13,13 @@ Content-Type: audio/mpeg
 
 < ./example.mp3
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# @name create-transcription
+POST http://localhost:3333/videos/51140df0-b622-4417-96b3-fb5c94d1d511/transcription
+Content-Type: application/json
+
+{
+  "prompt": "Drip too hard"
+}
