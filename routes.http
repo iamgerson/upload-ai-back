@@ -17,9 +17,21 @@ Content-Type: audio/mpeg
 ###
 
 # @name create-transcription
-POST http://localhost:3333/videos/51140df0-b622-4417-96b3-fb5c94d1d511/transcription
+POST http://localhost:3333/videos/cb8a90d4-79b0-4a7d-8d56-4a49f9a9f6a2/transcription
 Content-Type: application/json
 
 {
-  "prompt": "Drip too hard"
+  "prompt": "Te dou a minha vida"
+}
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+  "videoId": "51140df0-b622-4417-96b3-fb5c94d1d511",
+  "temperature": 0.5,
+  "template": "Gere um resumo sucinto da transcrição do vídeo informada a seguir:'''{transcription}'''"
 }
