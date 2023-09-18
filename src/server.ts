@@ -1,10 +1,15 @@
 import { fastify } from "fastify";
+import { fastifyCors } from "@fastify/cors";
 import { getAllPromptsRoute } from "./Routes/get-all-prompts";
 import { uploadVideoRoute } from "./Routes/upload-video";
 import { createTranscriptionRoute } from "./Routes/create-transcription";
 import { generateAICompletionRoute } from "./Routes/generate-ai-completion";
 
 const app = fastify()
+
+app.register(fastifyCors, {
+  origin: '*',
+})
 
 app.register(getAllPromptsRoute)
 app.register(uploadVideoRoute)
